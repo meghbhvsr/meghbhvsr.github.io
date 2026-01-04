@@ -28,16 +28,16 @@ const Footer = () => (
             <a href="/" className="text-gray-400 hover:text-purple-400 transition-colors duration-300 text-sm py-1">
               Home
             </a>
-            <a href="/about" className="text-gray-400 hover:text-purple-400 transition-colors duration-300 text-sm py-1">
+            <a href="/About" className="text-gray-400 hover:text-purple-400 transition-colors duration-300 text-sm py-1">
               About
             </a>
-            <a href="/projects" className="text-gray-400 hover:text-purple-400 transition-colors duration-300 text-sm py-1">
+            <a href="/Projects" className="text-gray-400 hover:text-purple-400 transition-colors duration-300 text-sm py-1">
               Projects
             </a>
-            <a href="/experience" className="text-gray-400 hover:text-purple-400 transition-colors duration-300 text-sm py-1">
+            <a href="/Experience" className="text-gray-400 hover:text-purple-400 transition-colors duration-300 text-sm py-1">
               Experience
             </a>
-            <a href="/blog" className="text-gray-400 hover:text-purple-400 transition-colors duration-300 text-sm py-1">
+            <a href="/Blog" className="text-gray-400 hover:text-purple-400 transition-colors duration-300 text-sm py-1">
               Blog
             </a>
           </div>

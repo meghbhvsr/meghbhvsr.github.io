@@ -9,10 +9,10 @@ const Header = () => {
 
   const navLinks = [
     { path: '/', label: 'Home', icon: '🏠' },
-    { path: '/about', label: 'About', icon: '👨‍💻' },
-    { path: '/projects', label: 'Projects', icon: '🚀' },
-    { path: '/experience', label: 'Experience', icon: '💼' },
-    { path: '/blog', label: 'Blog', icon: '📝' }
+    { path: '/About', label: 'About', icon: '👨‍💻' },
+    { path: '/Projects', label: 'Projects', icon: '🚀' },
+    { path: '/Experience', label: 'Experience', icon: '💼' },
+    { path: '/Blog', label: 'Blog', icon: '📝' }
   ];
 
   return (
