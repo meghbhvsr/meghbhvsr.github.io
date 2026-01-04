@@ -43,7 +43,7 @@ const About = () => (
               Professional Experience
             </h2>
             <p className="text-gray-300 leading-relaxed text-lg">
-              I have about <span className="text-purple-400 font-semibold">2 years of Software Development experience</span> throughout 
+              I have about <span className="text-purple-400 font-semibold">an year of experience working full time</span> at PGCWI, along with <span className="text-purple-400 font-semibold">2 years of Software Development experience</span> throughout 
               the 5 co-op terms I have completed. At these positions, I've created various Full Stack applications 
               while leveraging AI and ML libraries. I continuously strive to become a better problem solver and 
               programmer by solving LeetCode problems and creating personal side projects.
