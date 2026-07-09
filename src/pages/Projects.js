@@ -11,7 +11,7 @@ const projects = [
   {
     name: 'StackSense',
     techStack: 'React, TypeScript, Node.js, Express, PostgreSQL, Supabase, Anthropic Claude API, Tailwind CSS',
-    date: 'July 2026',
+    date: 'March 2026',
     description: 'Built an AI-powered architecture validation tool that turns plain-English descriptions into Mermaid diagrams and evaluates them against a configurable rule engine to surface prioritized findings.',
     img: stacksense,
     githubLink: 'https://github.com/meghbhvsr/StackSenseProject',
