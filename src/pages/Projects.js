@@ -6,8 +6,18 @@ import chat from '../images/chat.png';
 import rogue from '../images/rogue.png';
 import gpx from '../images/gpx.png';
 import stacksense from '../images/background-img3.jpg';
+import codesearch from '../images/codesearch.jpg';
 
 const projects = [
+  {
+    name: 'CodeSearch',
+    techStack: 'Python, PyTorch, Sentence-Transformers, FAISS, tree-sitter, FastAPI, React, Tailwind CSS',
+    date: 'October 2026',
+    description: 'Fine-tuned the UniXcoder code embedding model to find functions from plain-English queries, raising MRR@10 from 0.499 to 0.734 on CodeSearchNet, with the highest MRR@10 being 0.851. Built a CLI and web app that index any GitHub repo and search it in milliseconds.',
+    img: codesearch,
+    githubLink: 'https://github.com/meghbhvsr/CodeSearch',
+    featured: true
+  },
   {
     name: 'StackSense',
     techStack: 'React, TypeScript, Node.js, Express, PostgreSQL, Supabase, Anthropic Claude API, Tailwind CSS',
@@ -91,7 +101,7 @@ const ProjectCard = ({ project, index }) => (
         <img 
           src={project.img} 
           alt={`${project.name} preview`}
-          className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-500"
+          className="w-full h-56 object-cover group-hover:scale-110 transition-transform duration-500"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
         <div className="absolute top-4 right-4 w-10 h-10 bg-black/50 rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
@@ -144,7 +154,7 @@ const ProjectCard = ({ project, index }) => (
 
 const Projects = () => (
   <div className="min-h-screen bg-gradient-to-br from-slate-900 via-cyan-900 to-slate-900 py-20 px-4 sm:px-6 lg:px-8">
-    <div className="max-w-7xl mx-auto">
+    <div className="max-w-screen-2xl mx-auto">
       {/* Header */}
       <div className="text-center mb-16">
         <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6">
@@ -167,8 +177,8 @@ const Projects = () => (
           </span>
           Recent & Featured Work
         </h2>
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {projects.slice(0, 3).map((project, index) => (
+        <div className="grid md:grid-cols-2 xl:grid-cols-4 gap-8">
+          {projects.slice(0, 4).map((project, index) => (
             <ProjectCard key={index} project={project} index={index} />
           ))}
         </div>
@@ -202,8 +212,8 @@ const Projects = () => (
           Additional Projects
         </h2>
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {projects.slice(3).map((project, index) => (
-            <ProjectCard key={index + 3} project={project} index={index + 3} />
+          {projects.slice(4).map((project, index) => (
+            <ProjectCard key={index + 4} project={project} index={index + 4} />
           ))}
         </div>
       </div>
