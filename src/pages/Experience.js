@@ -8,6 +8,17 @@ import pgcwi from '../images/pgcwi_logo.png'; // You'll need to add this image
 
 const experiences = [
   {
+    company: 'CodeSearch',
+    role: 'Machine Learning Engineer (Personal Project)',
+    duration: 'Sep 2026 - Oct 2026',
+    description: [
+      'Fine-tuned UniXcoder (125M) on 401k CodeSearchNet pairs on a single 8 GB GPU for natural-language code search, raising MRR@10 from 0.499 (zero-shot) and 0.414 (BM25) to 0.734 across all 21,763 test functions.',
+      'Trained with cached multiple-negatives ranking loss (batch 256 using gradient caching), and mined hard negatives with false-negative filtering. Found and fixed docstring leakage in the dataset and a missing UniXcoder mode token that cost about 12 MRR points.',
+      'Built a CLI and a React + Tailwind web app on a FastAPI backend that indexes any GitHub repo per function with tree-sitter and FAISS, with cached incremental re-indexing and searches in milliseconds.',
+    ],
+    link: 'https://github.com/meghbhvsr/CodeSearch',
+  },
+  {
     company: 'PGCWI',
     role: 'AI Software Engineer',
     duration: 'Mar 2025 - Present',
@@ -148,9 +159,21 @@ const Experience = () => (
                           </div>
                         ))}
                       </div>
+
+                      {exp.link && (
+                        <a
+                          href={exp.link}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-block text-sm font-medium text-blue-400 hover:text-purple-400 transition-colors"
+                        >
+                          View on GitHub →
+                        </a>
+                      )}
                     </div>
-                    
+
                     {/* Company Image */}
+                    {exp.imgSrc && (
                     <div className="flex-shrink-0">
                       <div className="relative group/img">
                         <div className="absolute inset-0 bg-gradient-to-r from-blue-600 to-purple-600 rounded-2xl blur-xl opacity-0 group-hover:opacity-30 transition-opacity duration-500"></div>
@@ -161,6 +184,7 @@ const Experience = () => (
                         />
                       </div>
                     </div>
+                    )}
                   </div>
                 </div>
               </div>
