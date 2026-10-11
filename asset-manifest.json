@@ -1,12 +1,13 @@
 {
   "files": {
-    "main.css": "/static/css/main.e002ef2c.css",
-    "main.js": "/static/js/main.633d76f4.js",
+    "main.css": "/static/css/main.02c4979e.css",
+    "main.js": "/static/js/main.f5e2b8ba.js",
     "static/js/453.acca0757.chunk.js": "/static/js/453.acca0757.chunk.js",
     "static/media/personal1.jpg": "/static/media/personal1.9a14000f6a9cabd63544.jpg",
     "static/media/background-img3.jpg": "/static/media/background-img3.c99d560cc49a2d64d2ab.jpg",
     "static/media/snakeBackground.png": "/static/media/snakeBackground.846c0485272a39df72cb.png",
     "static/media/one-piece-img.jpg": "/static/media/one-piece-img.2680bfd8c2a87704bb5e.jpg",
+    "static/media/codesearch-demo.gif": "/static/media/codesearch-demo.217040b9a7ee48173a3f.gif",
     "static/media/megh_grad_photo.jpg": "/static/media/megh_grad_photo.62af4f617f4f676f28b1.jpg",
     "static/media/gpx.png": "/static/media/gpx.2f4145bf9fd884ca8181.png",
     "static/media/assistant.png": "/static/media/assistant.15f456645170012705a1.png",
@@ -16,12 +17,12 @@
     "static/media/rogue.png": "/static/media/rogue.0b3978f866d86920b5c6.png",
     "static/media/codesearch.jpg": "/static/media/codesearch.308c49b4f899c7d2cb0b.jpg",
     "index.html": "/index.html",
-    "main.e002ef2c.css.map": "/static/css/main.e002ef2c.css.map",
-    "main.633d76f4.js.map": "/static/js/main.633d76f4.js.map",
+    "main.02c4979e.css.map": "/static/css/main.02c4979e.css.map",
+    "main.f5e2b8ba.js.map": "/static/js/main.f5e2b8ba.js.map",
     "453.acca0757.chunk.js.map": "/static/js/453.acca0757.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.e002ef2c.css",
-    "static/js/main.633d76f4.js"
+    "static/css/main.02c4979e.css",
+    "static/js/main.f5e2b8ba.js"
   ]
 }
