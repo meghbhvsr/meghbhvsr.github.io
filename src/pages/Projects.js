@@ -95,7 +95,7 @@ const DemoModal = ({ project, onClose }) => {
 
   return (
     <div
-      className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-sm p-4"
+      className="fixed inset-0 z-50 flex items-center justify-center overflow-y-auto bg-black/80 backdrop-blur-sm p-3 sm:p-4"
       onClick={onClose}
       role="dialog"
       aria-modal="true"
@@ -106,7 +106,7 @@ const DemoModal = ({ project, onClose }) => {
           <h3 className="text-lg font-semibold text-white">{project.name} demo</h3>
           <button
             onClick={onClose}
-            className="w-9 h-9 rounded-full bg-white/10 hover:bg-white/20 text-white transition-colors"
+            className="flex-shrink-0 w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 text-white transition-colors"
             aria-label="Close demo"
           >
             ✕
@@ -115,8 +115,11 @@ const DemoModal = ({ project, onClose }) => {
         <img
           src={project.demo}
           alt={`${project.name} demo`}
-          className="w-full rounded-xl border border-white/10 shadow-2xl shadow-cyan-500/20"
+          className="w-full max-h-[80vh] object-contain rounded-xl border border-white/10 shadow-2xl shadow-cyan-500/20"
         />
+        <p className="mt-3 text-center text-xs text-gray-400 sm:hidden landscape:hidden">
+          Tip: turn your phone sideways for a bigger view
+        </p>
         <div className="mt-4 text-center">
           <a
             href={project.githubLink}
@@ -139,7 +142,7 @@ const ProjectCard = ({ project, index, onOpenDemo }) => (
     rel="noopener noreferrer" 
     className="group block"
   >
-    <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-6 hover:bg-white/10 transition-all duration-500 hover:scale-[1.02] hover:shadow-2xl hover:shadow-cyan-500/10 h-full">
+    <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-5 sm:p-6 hover:bg-white/10 transition-all duration-500 hover:scale-[1.02] hover:shadow-2xl hover:shadow-cyan-500/10 h-full">
       {project.featured && (
         <div className="flex items-center gap-2 mb-4">
           <span className="px-3 py-1 bg-cyan-500/20 text-cyan-400 text-xs font-medium rounded-full border border-cyan-500/30">
@@ -174,7 +177,7 @@ const ProjectCard = ({ project, index, onOpenDemo }) => (
               e.stopPropagation();
               onOpenDemo(project);
             }}
-            className="absolute bottom-3 left-3 px-3 py-1.5 bg-black/70 hover:bg-cyan-500/80 text-white text-xs font-medium rounded-full border border-white/20 backdrop-blur-sm transition-colors"
+            className="absolute bottom-3 left-3 px-4 py-2 sm:px-3 sm:py-1.5 bg-black/70 hover:bg-cyan-500/80 text-white text-sm sm:text-xs font-medium rounded-full border border-white/20 backdrop-blur-sm transition-colors"
           >
             ▶ Watch demo
           </button>
@@ -215,7 +218,7 @@ const ProjectCard = ({ project, index, onOpenDemo }) => (
         </div>
 
         {/* GitHub Link Indicator */}
-        <div className="flex items-center gap-2 text-cyan-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+        <div className="flex items-center gap-2 text-cyan-400 [@media(hover:hover)_and_(pointer:fine)]:opacity-0 group-hover:opacity-100 transition-opacity duration-300">
           <span className="text-sm font-medium">View on GitHub</span>
           <span className="text-lg">→</span>
         </div>
@@ -229,31 +232,31 @@ const Projects = () => {
   const closeDemo = useCallback(() => setDemoProject(null), []);
 
   return (
-  <div className="min-h-screen bg-gradient-to-br from-slate-900 via-cyan-900 to-slate-900 py-20 px-4 sm:px-6 lg:px-8">
+  <div className="min-h-screen bg-gradient-to-br from-slate-900 via-cyan-900 to-slate-900 pt-24 pb-16 sm:py-20 px-4 sm:px-6 lg:px-8">
     <div className="max-w-screen-2xl mx-auto">
       {/* Header */}
-      <div className="text-center mb-16">
+      <div className="text-center mb-10 sm:mb-16">
         <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6">
           Featured{' '}
           <span className="bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent">
             Projects
           </span>
         </h1>
-        <p className="text-xl text-gray-400 max-w-3xl mx-auto mb-8">
+        <p className="text-lg sm:text-xl text-gray-400 max-w-3xl mx-auto mb-8">
           A showcase of my technical skills and creative problem-solving through various web applications and software projects
         </p>
         <div className="w-24 h-1 bg-gradient-to-r from-cyan-500 to-blue-500 mx-auto rounded-full"></div>
       </div>
 
       {/* Featured Projects */}
-      <div className="mb-16">
-        <h2 className="text-2xl font-bold text-white mb-8 flex items-center gap-3">
-          <span className="w-8 h-8 bg-gradient-to-r from-cyan-500 to-blue-500 rounded-full flex items-center justify-center">
+      <div className="mb-12 sm:mb-16">
+        <h2 className="text-xl sm:text-2xl font-bold text-white mb-6 sm:mb-8 flex items-center gap-3">
+          <span className="flex-shrink-0 w-8 h-8 bg-gradient-to-r from-cyan-500 to-blue-500 rounded-full flex items-center justify-center">
             ⭐
           </span>
           Recent & Featured Work
         </h2>
-        <div className="grid md:grid-cols-2 xl:grid-cols-4 gap-8">
+        <div className="grid md:grid-cols-2 xl:grid-cols-4 gap-6 sm:gap-8">
           {projects.slice(0, 4).map((project, index) => (
             <ProjectCard key={index} project={project} index={index} onOpenDemo={setDemoProject} />
           ))}
@@ -261,13 +264,13 @@ const Projects = () => {
       </div>
 
       {/* Call to Action */}
-      <div className="text-center mb-16">
-        <div className="inline-block p-8 bg-gradient-to-r from-cyan-500/10 to-blue-500/10 rounded-2xl border border-cyan-500/20">
-          <h3 className="text-2xl font-bold text-white mb-4 flex items-center justify-center gap-3">
+      <div className="text-center mb-12 sm:mb-16">
+        <div className="inline-block p-6 sm:p-8 bg-gradient-to-r from-cyan-500/10 to-blue-500/10 rounded-2xl border border-cyan-500/20">
+          <h3 className="text-xl sm:text-2xl font-bold text-white mb-4 flex items-center justify-center gap-3">
             <span className="text-3xl">🚀</span>
             Explore the Code
           </h3>
-          <p className="text-gray-300 text-lg mb-6 max-w-2xl">
+          <p className="text-gray-300 text-base sm:text-lg mb-6 max-w-2xl">
             Click on any project card to explore the source code and technical implementation on GitHub. 
             Each repository includes detailed documentation and setup instructions.
           </p>
@@ -281,13 +284,13 @@ const Projects = () => {
 
       {/* Other Projects */}
       <div>
-        <h2 className="text-2xl font-bold text-white mb-8 flex items-center gap-3">
-          <span className="w-8 h-8 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full flex items-center justify-center">
+        <h2 className="text-xl sm:text-2xl font-bold text-white mb-6 sm:mb-8 flex items-center gap-3">
+          <span className="flex-shrink-0 w-8 h-8 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full flex items-center justify-center">
             📋
           </span>
           Additional Projects
         </h2>
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
           {projects.slice(4).map((project, index) => (
             <ProjectCard key={index + 4} project={project} index={index + 4} onOpenDemo={setDemoProject} />
           ))}
@@ -295,7 +298,7 @@ const Projects = () => {
       </div>
 
       {/* Bottom Section */}
-      <div className="mt-20 text-center">
+      <div className="mt-12 sm:mt-20 text-center">
         <div className="inline-flex items-center gap-2 px-6 py-3 bg-white/5 rounded-full border border-white/10">
           <span className="w-2 h-2 bg-cyan-400 rounded-full animate-pulse"></span>
           <span className="text-gray-400 text-sm">More projects in development</span>

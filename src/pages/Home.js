@@ -3,11 +3,11 @@ import { Link } from 'react-router-dom';
 import personal from '../images/personal1.jpg';
 
 const Home = () => (
-  <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 flex items-center justify-center px-4 sm:px-6 lg:px-8">
+  <div className="relative overflow-hidden min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 flex items-center justify-center px-4 sm:px-6 lg:px-8 pt-24 pb-16 lg:py-0">
     <div className="max-w-7xl mx-auto">
-      <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+      <div className="grid lg:grid-cols-2 gap-10 lg:gap-20 items-center">
         {/* Text Content */}
-        <div className="text-center lg:text-left space-y-8 order-2 lg:order-1">
+        <div className="text-center lg:text-left space-y-6 sm:space-y-8 order-2 lg:order-1">
           <div className="space-y-4">
             <div className="inline-block">
               <span className="bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent text-lg font-medium tracking-wide">
@@ -25,7 +25,7 @@ const Home = () => (
             </h2>
           </div>
           
-          <p className="text-lg text-gray-400 max-w-xl mx-auto lg:mx-0 leading-relaxed">
+          <p className="text-base sm:text-lg text-gray-400 max-w-xl mx-auto lg:mx-0 leading-relaxed">
             Passionate about creating innovative solutions and pushing the boundaries of technology. 
             Explore my journey through projects, experiences, and everything that defines my craft.
           </p>
@@ -53,9 +53,9 @@ const Home = () => (
             <img 
               src={personal} 
               alt="Megh - Software Developer" 
-              className="relative w-80 h-80 lg:w-96 lg:h-96 object-cover rounded-3xl shadow-2xl border-4 border-white/10 hover:scale-105 transition-transform duration-500"
+              className="relative w-60 h-60 sm:w-80 sm:h-80 lg:w-96 lg:h-96 object-cover rounded-3xl shadow-2xl border-4 border-white/10 hover:scale-105 transition-transform duration-500"
             />
-            <div className="absolute -bottom-4 -right-4 w-24 h-24 bg-gradient-to-r from-purple-600 to-pink-600 rounded-2xl flex items-center justify-center shadow-xl">
+            <div className="absolute -bottom-3 -right-3 sm:-bottom-4 sm:-right-4 w-16 h-16 sm:w-24 sm:h-24 bg-gradient-to-r from-purple-600 to-pink-600 rounded-2xl flex items-center justify-center shadow-xl">
               <span className="text-2xl">💻</span>
             </div>
           </div>

@@ -1,10 +1,10 @@
 import React from 'react';
 
 const Blog = () => (
-  <div className="min-h-screen bg-gradient-to-br from-slate-900 via-red-900 to-slate-900 py-20 px-4 sm:px-6 lg:px-8">
+  <div className="min-h-screen bg-gradient-to-br from-slate-900 via-red-900 to-slate-900 pt-24 pb-16 sm:py-20 px-4 sm:px-6 lg:px-8">
     <div className="max-w-4xl mx-auto">
       {/* Header */}
-      <div className="text-center mb-16">
+      <div className="text-center mb-10 sm:mb-16">
         <div className="inline-flex items-center gap-2 px-4 py-2 bg-red-500/20 rounded-full border border-red-500/30 mb-6">
           <span className="w-2 h-2 bg-red-400 rounded-full"></span>
           <span className="text-red-400 text-sm font-medium">Learning Experience</span>
@@ -16,19 +16,19 @@ const Blog = () => (
           </span>{' '}
           Story
         </h1>
-        <p className="text-xl text-gray-400 max-w-3xl mx-auto leading-relaxed">
+        <p className="text-lg sm:text-xl text-gray-400 max-w-3xl mx-auto leading-relaxed">
           A transparent look at my Google Software Engineering interview journey - 
           from application to hiring committee rejection, and the valuable lessons learned along the way.
         </p>
       </div>
 
       {/* Blog Content */}
-      <article className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-3xl p-8 lg:p-12 shadow-2xl">
+      <article className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-3xl p-5 sm:p-8 lg:p-12 shadow-2xl">
         <div className="prose prose-lg prose-invert max-w-none">
           
           {/* Introduction */}
-          <div className="mb-12 p-6 bg-gradient-to-r from-blue-500/10 to-purple-500/10 rounded-2xl border border-blue-500/20">
-            <p className="text-gray-300 text-lg leading-relaxed m-0">
+          <div className="mb-10 sm:mb-12 p-5 sm:p-6 bg-gradient-to-r from-blue-500/10 to-purple-500/10 rounded-2xl border border-blue-500/20">
+            <p className="text-gray-300 text-base sm:text-lg leading-relaxed m-0">
               I recently went through the entire Software Engineering recruitment process at Google, 
               making it all the way to the hiring committee. Although I didn't pass, I learned a lot 
               and wanted to share my learnings, process, and tips. I believe we can learn more from 
@@ -38,8 +38,8 @@ const Blog = () => (
 
           {/* Resume Screening */}
           <section className="mb-10">
-            <h2 className="text-2xl font-bold text-white mb-4 flex items-center gap-3">
-              <span className="w-8 h-8 bg-gradient-to-r from-green-500 to-emerald-500 rounded-full flex items-center justify-center text-white font-bold text-sm">1</span>
+            <h2 className="text-xl sm:text-2xl font-bold text-white mb-4 flex items-center gap-3">
+              <span className="flex-shrink-0 w-8 h-8 bg-gradient-to-r from-green-500 to-emerald-500 rounded-full flex items-center justify-center text-white font-bold text-sm">1</span>
               Resume Screening
             </h2>
             <p className="text-gray-300 leading-relaxed">
@@ -53,8 +53,8 @@ const Blog = () => (
 
           {/* Online Assessment */}
           <section className="mb-10">
-            <h2 className="text-2xl font-bold text-white mb-4 flex items-center gap-3">
-              <span className="w-8 h-8 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-full flex items-center justify-center text-white font-bold text-sm">2</span>
+            <h2 className="text-xl sm:text-2xl font-bold text-white mb-4 flex items-center gap-3">
+              <span className="flex-shrink-0 w-8 h-8 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-full flex items-center justify-center text-white font-bold text-sm">2</span>
               Google Online Assessment
             </h2>
             <p className="text-gray-300 leading-relaxed">
@@ -67,8 +67,8 @@ const Blog = () => (
 
           {/* Phone Screen */}
           <section className="mb-10">
-            <h2 className="text-2xl font-bold text-white mb-4 flex items-center gap-3">
-              <span className="w-8 h-8 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full flex items-center justify-center text-white font-bold text-sm">3</span>
+            <h2 className="text-xl sm:text-2xl font-bold text-white mb-4 flex items-center gap-3">
+              <span className="flex-shrink-0 w-8 h-8 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full flex items-center justify-center text-white font-bold text-sm">3</span>
               Phone Screen
             </h2>
             <div className="p-4 bg-green-500/10 rounded-xl border border-green-500/20">
@@ -81,8 +81,8 @@ const Blog = () => (
 
           {/* On-Site */}
           <section className="mb-10">
-            <h2 className="text-2xl font-bold text-white mb-4 flex items-center gap-3">
-              <span className="w-8 h-8 bg-gradient-to-r from-orange-500 to-red-500 rounded-full flex items-center justify-center text-white font-bold text-sm">4</span>
+            <h2 className="text-xl sm:text-2xl font-bold text-white mb-4 flex items-center gap-3">
+              <span className="flex-shrink-0 w-8 h-8 bg-gradient-to-r from-orange-500 to-red-500 rounded-full flex items-center justify-center text-white font-bold text-sm">4</span>
               On-Site Preparation
             </h2>
             <p className="text-gray-300 leading-relaxed mb-4">
@@ -92,15 +92,15 @@ const Blog = () => (
             </p>
             <ul className="list-none space-y-2 text-gray-300">
               <li className="flex items-center gap-3">
-                <span className="w-2 h-2 bg-orange-400 rounded-full"></span>
+                <span className="flex-shrink-0 w-2 h-2 bg-orange-400 rounded-full"></span>
                 Completed the Blind 75 problems
               </li>
               <li className="flex items-center gap-3">
-                <span className="w-2 h-2 bg-orange-400 rounded-full"></span>
+                <span className="flex-shrink-0 w-2 h-2 bg-orange-400 rounded-full"></span>
                 Used NeetCode videos for explanations
               </li>
               <li className="flex items-center gap-3">
-                <span className="w-2 h-2 bg-orange-400 rounded-full"></span>
+                <span className="flex-shrink-0 w-2 h-2 bg-orange-400 rounded-full"></span>
                 Solved Google-tagged LeetCode questions
               </li>
             </ul>
@@ -114,8 +114,8 @@ const Blog = () => (
           {/* Interview Rounds */}
           <div className="grid gap-8 mb-12">
             {/* Googleyness Round */}
-            <div className="p-6 bg-green-500/10 rounded-2xl border border-green-500/20">
-              <h3 className="text-xl font-bold text-green-400 mb-3 flex items-center gap-2">
+            <div className="p-5 sm:p-6 bg-green-500/10 rounded-2xl border border-green-500/20">
+              <h3 className="text-lg sm:text-xl font-bold text-green-400 mb-3 flex items-center gap-2">
                 <span className="text-2xl">😊</span>
                 Googleyness Round - Success
               </h3>
@@ -127,8 +127,8 @@ const Blog = () => (
             </div>
 
             {/* Technical Interview 1 */}
-            <div className="p-6 bg-green-500/10 rounded-2xl border border-green-500/20">
-              <h3 className="text-xl font-bold text-green-400 mb-3 flex items-center gap-2">
+            <div className="p-5 sm:p-6 bg-green-500/10 rounded-2xl border border-green-500/20">
+              <h3 className="text-lg sm:text-xl font-bold text-green-400 mb-3 flex items-center gap-2">
                 <span className="text-2xl">💡</span>
                 Technical Interview 1 - Success
               </h3>
@@ -140,8 +140,8 @@ const Blog = () => (
             </div>
 
             {/* Halftime */}
-            <div className="p-6 bg-blue-500/10 rounded-2xl border border-blue-500/20 text-center">
-              <h3 className="text-xl font-bold text-blue-400 mb-3">
+            <div className="p-5 sm:p-6 bg-blue-500/10 rounded-2xl border border-blue-500/20 text-center">
+              <h3 className="text-lg sm:text-xl font-bold text-blue-400 mb-3">
                 🔄 Halftime Break
               </h3>
               <p className="text-gray-300 leading-relaxed">
@@ -151,8 +151,8 @@ const Blog = () => (
             </div>
 
             {/* Technical Interview 2 */}
-            <div className="p-6 bg-yellow-500/10 rounded-2xl border border-yellow-500/20">
-              <h3 className="text-xl font-bold text-yellow-400 mb-3 flex items-center gap-2">
+            <div className="p-5 sm:p-6 bg-yellow-500/10 rounded-2xl border border-yellow-500/20">
+              <h3 className="text-lg sm:text-xl font-bold text-yellow-400 mb-3 flex items-center gap-2">
                 <span className="text-2xl">⚠️</span>
                 Technical Interview 2 - Mixed
               </h3>
@@ -165,8 +165,8 @@ const Blog = () => (
             </div>
 
             {/* Technical Interview 3 */}
-            <div className="p-6 bg-red-500/10 rounded-2xl border border-red-500/20">
-              <h3 className="text-xl font-bold text-red-400 mb-3 flex items-center gap-2">
+            <div className="p-5 sm:p-6 bg-red-500/10 rounded-2xl border border-red-500/20">
+              <h3 className="text-lg sm:text-xl font-bold text-red-400 mb-3 flex items-center gap-2">
                 <span className="text-2xl">❌</span>
                 Technical Interview 3 - Struggled
               </h3>
@@ -180,8 +180,8 @@ const Blog = () => (
           </div>
 
           {/* Key Learnings */}
-          <section className="p-8 bg-gradient-to-r from-purple-500/10 to-pink-500/10 rounded-2xl border border-purple-500/20">
-            <h2 className="text-2xl font-bold text-white mb-6 flex items-center gap-3">
+          <section className="p-5 sm:p-8 bg-gradient-to-r from-purple-500/10 to-pink-500/10 rounded-2xl border border-purple-500/20">
+            <h2 className="text-xl sm:text-2xl font-bold text-white mb-6 flex items-center gap-3">
               <span className="text-3xl">🎓</span>
               Key Learnings
             </h2>

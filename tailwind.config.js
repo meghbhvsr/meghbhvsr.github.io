@@ -1,5 +1,9 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
+  future: {
+    // Only apply hover: styles on devices with a real pointer, so tapped cards don't stay zoomed on phones
+    hoverOnlyWhenSupported: true,
+  },
   content: [
     "./src/**/*.{js,jsx,ts,tsx}",
     "./public/index.html"

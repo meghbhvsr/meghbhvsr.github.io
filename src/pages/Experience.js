@@ -85,17 +85,17 @@ const experiences = [
 ];
 
 const Experience = () => (
-  <div className="min-h-screen bg-gradient-to-br from-slate-900 via-blue-900 to-slate-900 py-20 px-4 sm:px-6 lg:px-8">
+  <div className="min-h-screen bg-gradient-to-br from-slate-900 via-blue-900 to-slate-900 pt-24 pb-16 sm:py-20 px-4 sm:px-6 lg:px-8">
     <div className="max-w-6xl mx-auto">
       {/* Header */}
-      <div className="text-center mb-16">
+      <div className="text-center mb-10 sm:mb-16">
         <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6">
           Professional{' '}
           <span className="bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
             Experience
           </span>
         </h1>
-        <p className="text-xl text-gray-400 max-w-3xl mx-auto">
+        <p className="text-lg sm:text-xl text-gray-400 max-w-3xl mx-auto">
           A journey through innovative projects and impactful contributions across various organizations
         </p>
       </div>
@@ -105,7 +105,7 @@ const Experience = () => (
         {/* Timeline line */}
         <div className="absolute left-8 top-0 bottom-0 w-0.5 bg-gradient-to-b from-blue-500 to-purple-500 hidden lg:block"></div>
         
-        <div className="space-y-12">
+        <div className="space-y-6 sm:space-y-12">
           {experiences.map((exp, index) => (
             <div key={index} className="relative">
               {/* Timeline dot */}
@@ -113,20 +113,20 @@ const Experience = () => (
               
               {/* Experience Card */}
               <div className="lg:ml-20 group">
-                <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-8 hover:bg-white/10 transition-all duration-500 hover:scale-[1.02] hover:shadow-2xl hover:shadow-blue-500/10">
+                <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-5 sm:p-8 hover:bg-white/10 transition-all duration-500 hover:scale-[1.02] hover:shadow-2xl hover:shadow-blue-500/10">
                   <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-6">
                     {/* Content */}
                     <div className="flex-1 space-y-4">
                       <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
                         <div>
-                          <h3 className="text-2xl font-bold text-white group-hover:text-blue-400 transition-colors">
+                          <h3 className="text-xl sm:text-2xl font-bold text-white group-hover:text-blue-400 transition-colors">
                             {exp.company}
                           </h3>
-                          <h4 className="text-lg font-semibold text-blue-400 mt-1">
+                          <h4 className="text-base sm:text-lg font-semibold text-blue-400 mt-1">
                             {exp.role}
                           </h4>
                         </div>
-                        <div className="flex items-center gap-2">
+                        <div className="flex flex-wrap items-center gap-2">
                           {exp.current && (
                             <span className="px-3 py-1 bg-green-500/20 text-green-400 text-sm font-medium rounded-full border border-green-500/30">
                               Current
@@ -142,7 +142,7 @@ const Experience = () => (
                         {exp.description.map((desc, i) => (
                           <div key={i} className="flex items-start gap-3">
                             <div className="w-2 h-2 bg-purple-400 rounded-full mt-2 flex-shrink-0"></div>
-                            <p className="text-gray-300 leading-relaxed">
+                            <p className="text-sm sm:text-base text-gray-300 leading-relaxed">
                               {desc}
                             </p>
                           </div>
@@ -150,14 +150,14 @@ const Experience = () => (
                       </div>
                     </div>
                     
-                    {/* Company Image */}
-                    <div className="flex-shrink-0">
+                    {/* Company Image (shown above the details on phones) */}
+                    <div className="flex-shrink-0 order-first lg:order-none">
                       <div className="relative group/img">
                         <div className="absolute inset-0 bg-gradient-to-r from-blue-600 to-purple-600 rounded-2xl blur-xl opacity-0 group-hover:opacity-30 transition-opacity duration-500"></div>
                         <img 
                           src={exp.imgSrc} 
                           alt={`${exp.company} logo`}
-                          className="relative w-24 h-24 lg:w-32 lg:h-32 object-contain bg-white/10 rounded-2xl p-4 border border-white/20 group-hover/img:scale-110 transition-transform duration-300"
+                          className="relative w-16 h-16 sm:w-24 sm:h-24 lg:w-32 lg:h-32 object-contain bg-white/10 rounded-2xl p-2 sm:p-4 border border-white/20 group-hover/img:scale-110 transition-transform duration-300"
                         />
                       </div>
                     </div>
@@ -170,7 +170,7 @@ const Experience = () => (
       </div>
       
       {/* Bottom decoration */}
-      <div className="mt-20 text-center">
+      <div className="mt-12 sm:mt-20 text-center">
         <div className="inline-flex items-center gap-2 px-6 py-3 bg-white/5 rounded-full border border-white/10">
           <span className="w-2 h-2 bg-blue-400 rounded-full animate-pulse"></span>
           <span className="text-gray-400 text-sm">More experiences coming soon</span>

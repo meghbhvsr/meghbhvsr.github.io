@@ -10,6 +10,9 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  /* Decorative blobs and badges can poke past the edge on narrow phones; never let them cause sideways scrolling */
+  overflow-x: hidden;
+  background-color: #0f172a;
 }
 
 code {

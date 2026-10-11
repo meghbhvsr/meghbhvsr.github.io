@@ -1,8 +1,18 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+
+// Router links (not plain hrefs) so they resolve to #/Page under HashRouter
+const quickLinks = [
+  { path: '/', label: 'Home' },
+  { path: '/About', label: 'About' },
+  { path: '/Projects', label: 'Projects' },
+  { path: '/Experience', label: 'Experience' },
+  { path: '/Blog', label: 'Blog' },
+];
 
 const Footer = () => (
-  <footer className="bg-slate-900/95 backdrop-blur-sm border-t border-white/10">
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+  <footer className="relative overflow-hidden bg-slate-900/95 backdrop-blur-sm border-t border-white/10">
+    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-12">
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
         {/* Brand Section */}
         <div className="space-y-4">
@@ -25,21 +35,16 @@ const Footer = () => (
             Quick Links
           </h3>
           <div className="grid grid-cols-2 gap-2">
-            <a href="/" className="text-gray-400 hover:text-purple-400 transition-colors duration-300 text-sm py-1">
-              Home
-            </a>
-            <a href="/About" className="text-gray-400 hover:text-purple-400 transition-colors duration-300 text-sm py-1">
-              About
-            </a>
-            <a href="/Projects" className="text-gray-400 hover:text-purple-400 transition-colors duration-300 text-sm py-1">
-              Projects
-            </a>
-            <a href="/Experience" className="text-gray-400 hover:text-purple-400 transition-colors duration-300 text-sm py-1">
-              Experience
-            </a>
-            <a href="/Blog" className="text-gray-400 hover:text-purple-400 transition-colors duration-300 text-sm py-1">
-              Blog
-            </a>
+            {quickLinks.map((link) => (
+              <Link
+                key={link.path}
+                to={link.path}
+                onClick={() => window.scrollTo(0, 0)}
+                className="text-gray-400 hover:text-purple-400 transition-colors duration-300 text-sm py-1"
+              >
+                {link.label}
+              </Link>
+            ))}
           </div>
         </div>
 
@@ -73,7 +78,7 @@ const Footer = () => (
               <span className="text-sm">LinkedIn</span>
             </a>
             <a 
-              href="mailto:megh@example.com" 
+              href="mailto:sam.m.bhavsar@gmail.com"
               className="flex items-center gap-3 text-gray-400 hover:text-green-400 transition-colors duration-300 group"
             >
               <div className="w-8 h-8 bg-white/10 rounded-lg flex items-center justify-center group-hover:bg-green-600/20 transition-colors duration-300">
@@ -86,8 +91,8 @@ const Footer = () => (
       </div>
 
       {/* Bottom Section */}
-      <div className="mt-12 pt-8 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4">
-        <p className="text-gray-400 text-sm">
+      <div className="mt-10 sm:mt-12 pt-8 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4">
+        <p className="text-gray-400 text-sm text-center sm:text-left">
           &copy; {new Date().getFullYear()} Megh Bhavsar. All rights reserved.
         </p>
         
