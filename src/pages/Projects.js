@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import weather from '../images/weather.jpg';
 import snake from '../images/snakeBackground.png';
 import assistant from '../images/assistant.png';
@@ -7,6 +7,7 @@ import rogue from '../images/rogue.png';
 import gpx from '../images/gpx.png';
 import stacksense from '../images/background-img3.jpg';
 import codesearch from '../images/codesearch.jpg';
+import codesearchDemo from '../images/codesearch-demo.gif';
 
 const projects = [
   {
@@ -15,6 +16,7 @@ const projects = [
     date: 'October 2026',
     description: 'Fine-tuned the UniXcoder code embedding model to find functions from plain-English queries, raising MRR@10 from 0.499 to 0.734 on CodeSearchNet, with the highest MRR@10 being 0.851. Built a CLI and web app that index any GitHub repo and search it in milliseconds.',
     img: codesearch,
+    demo: codesearchDemo,
     githubLink: 'https://github.com/meghbhvsr/CodeSearch',
     featured: true
   },
@@ -80,7 +82,57 @@ const projects = [
   }
 ];
 
-const ProjectCard = ({ project, index }) => (
+const DemoModal = ({ project, onClose }) => {
+  useEffect(() => {
+    const onKey = (e) => e.key === 'Escape' && onClose();
+    document.addEventListener('keydown', onKey);
+    document.body.style.overflow = 'hidden';
+    return () => {
+      document.removeEventListener('keydown', onKey);
+      document.body.style.overflow = '';
+    };
+  }, [onClose]);
+
+  return (
+    <div
+      className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-sm p-4"
+      onClick={onClose}
+      role="dialog"
+      aria-modal="true"
+      aria-label={`${project.name} demo`}
+    >
+      <div className="relative w-full max-w-5xl" onClick={(e) => e.stopPropagation()}>
+        <div className="flex items-center justify-between mb-3">
+          <h3 className="text-lg font-semibold text-white">{project.name} demo</h3>
+          <button
+            onClick={onClose}
+            className="w-9 h-9 rounded-full bg-white/10 hover:bg-white/20 text-white transition-colors"
+            aria-label="Close demo"
+          >
+            ✕
+          </button>
+        </div>
+        <img
+          src={project.demo}
+          alt={`${project.name} demo`}
+          className="w-full rounded-xl border border-white/10 shadow-2xl shadow-cyan-500/20"
+        />
+        <div className="mt-4 text-center">
+          <a
+            href={project.githubLink}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-sm font-medium text-cyan-400 hover:text-cyan-300 transition-colors"
+          >
+            View on GitHub →
+          </a>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+const ProjectCard = ({ project, index, onOpenDemo }) => (
   <a 
     href={project.githubLink} 
     target="_blank" 
@@ -98,15 +150,35 @@ const ProjectCard = ({ project, index }) => (
       
       {/* Project Image */}
       <div className="relative overflow-hidden rounded-xl mb-6">
-        <img 
-          src={project.img} 
-          alt={`${project.name} preview`}
-          className="w-full h-56 object-cover group-hover:scale-110 transition-transform duration-500"
-        />
+        {project.demo ? (
+          <img
+            src={project.demo}
+            alt={`${project.name} demo`}
+            className="w-full h-56 object-contain bg-[#0a0a0f]"
+          />
+        ) : (
+          <img
+            src={project.img}
+            alt={`${project.name} preview`}
+            className="w-full h-56 object-cover group-hover:scale-110 transition-transform duration-500"
+          />
+        )}
         <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
         <div className="absolute top-4 right-4 w-10 h-10 bg-black/50 rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
           <span className="text-white text-sm">🔗</span>
         </div>
+        {project.demo && (
+          <button
+            onClick={(e) => {
+              e.preventDefault();
+              e.stopPropagation();
+              onOpenDemo(project);
+            }}
+            className="absolute bottom-3 left-3 px-3 py-1.5 bg-black/70 hover:bg-cyan-500/80 text-white text-xs font-medium rounded-full border border-white/20 backdrop-blur-sm transition-colors"
+          >
+            ▶ Watch demo
+          </button>
+        )}
       </div>
 
       {/* Project Info */}
@@ -152,7 +224,11 @@ const ProjectCard = ({ project, index }) => (
   </a>
 );
 
-const Projects = () => (
+const Projects = () => {
+  const [demoProject, setDemoProject] = useState(null);
+  const closeDemo = useCallback(() => setDemoProject(null), []);
+
+  return (
   <div className="min-h-screen bg-gradient-to-br from-slate-900 via-cyan-900 to-slate-900 py-20 px-4 sm:px-6 lg:px-8">
     <div className="max-w-screen-2xl mx-auto">
       {/* Header */}
@@ -179,7 +255,7 @@ const Projects = () => (
         </h2>
         <div className="grid md:grid-cols-2 xl:grid-cols-4 gap-8">
           {projects.slice(0, 4).map((project, index) => (
-            <ProjectCard key={index} project={project} index={index} />
+            <ProjectCard key={index} project={project} index={index} onOpenDemo={setDemoProject} />
           ))}
         </div>
       </div>
@@ -213,7 +289,7 @@ const Projects = () => (
         </h2>
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {projects.slice(4).map((project, index) => (
-            <ProjectCard key={index + 4} project={project} index={index + 4} />
+            <ProjectCard key={index + 4} project={project} index={index + 4} onOpenDemo={setDemoProject} />
           ))}
         </div>
       </div>
@@ -226,7 +302,10 @@ const Projects = () => (
         </div>
       </div>
     </div>
+
+    {demoProject && <DemoModal project={demoProject} onClose={closeDemo} />}
   </div>
-);
+  );
+};
 
 export default Projects;
