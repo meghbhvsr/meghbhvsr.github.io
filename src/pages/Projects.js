@@ -8,6 +8,7 @@ import gpx from '../images/gpx.png';
 import stacksense from '../images/background-img3.jpg';
 import codesearch from '../images/codesearch.jpg';
 import codesearchDemo from '../images/codesearch-demo.gif';
+import chessml from '../images/chess-ml.svg';
 
 const projects = [
   {
@@ -30,12 +31,12 @@ const projects = [
     featured: true
   },
   {
-    name: 'Weather App',
-    techStack: 'Angular, TypeScript, HTML, SCSS, Bootstrap',
-    date: 'December 2024',
-    description: 'Built a web application that gets weather data from an API, and displays it for the user based on location and forecast.',
-    img: weather,
-    githubLink: 'https://github.com/meghbhvsr/WeatherApp',
+    name: 'Multiplayer Chess ML',
+    techStack: 'React, Node.js, Express, WebSockets, SQLite, Stockfish, ONNX Runtime, Python, PyTorch',
+    date: 'October 2026',
+    description: 'Built a real-time multiplayer chess app with accounts, Elo ratings, game replays and Stockfish bots. Trained a residual CNN from scratch on 21M positions from 2000+ rated Lichess games, which predicts the strong player\'s move 53% of the time and plays at about 1720 Elo with AlphaZero-style tree search.',
+    img: chessml,
+    githubLink: 'https://github.com/meghbhvsr/MultiplayerChessML',
     featured: true
   },
   {
@@ -46,6 +47,14 @@ const projects = [
     img: assistant,
     githubLink: 'https://github.com/meghbhvsr/VirtualAssistant',
     featured: true
+  },
+  {
+    name: 'Weather App',
+    techStack: 'Angular, TypeScript, HTML, SCSS, Bootstrap',
+    date: 'December 2024',
+    description: 'Built a web application that gets weather data from an API, and displays it for the user based on location and forecast.',
+    img: weather,
+    githubLink: 'https://github.com/meghbhvsr/WeatherApp'
   },
   {
     name: 'Arcade Games',
